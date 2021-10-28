@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+}
+
+#grid {
+   border: 1px solid black;
+   width: 800px;
+   height: 800px;
+}
+
+
+
+.cell {
+    /* border: 1px black solid; */
+    height: 50px;
+    width: 50px;
+}
+
+.row {
+    display: flex;
+}
+
+/* .cell:hover {
+    background-color: black;
+} */
