@@ -1,11 +1,14 @@
 // CREATE ETCH-A-SKETCH BOX
 const grid = document.getElementById('grid');
-let cells;
+const gridSizeText = document.querySelector('.grid-size');
 
+let cells;
 let size = 16;
 let row, cell;
 let grid_width = grid.clientWidth;
 let grid_height = grid.clientHeight;
+let color = 'black';
+let isRandomColor;
 createGrid();
 
 function createGrid() {
@@ -35,6 +38,8 @@ function changeSize() {
         cell.style.height = `${grid_height / size}px`;
         cell.style.width = `${grid_width / size}px`;
     })
+    gridSizeText.textContent = `${size}x${size}`
+
 }
 
 function promptGridSize() {
@@ -46,19 +51,32 @@ function promptGridSize() {
 
 // HOVER
 function changeColor() {
-    this.style.background = 'black';
+    if (isRandomColor) return this.style.background = '#'+Math.floor(Math.random()*16777215).toString(16);
+    this.style.background = color;
 }
 
 
 
 // CLEAR ETCH-A-SKETCH BOX
-const button = document.getElementById('clear-cells');
-button.addEventListener('click', () => {
+const clearBtn = document.getElementById('clear-cells');
+clearBtn.addEventListener('click', () => {
     deleteCells();
     promptGridSize();
     createGrid();
     changeSize()
 })
+
+const randomColorBtn = document.getElementById('random-color');
+randomColorBtn.addEventListener('click', () => {
+    isRandomColor = true;
+})
+
+const blackBtn = document.getElementById('black');
+blackBtn.addEventListener('click', () => {
+    isRandomColor = false;
+})
+
+
 
 function deleteCells() {
    grid.innerHTML = ''

@@ -4,7 +4,15 @@
 
 }
 
+h1 {
+    margin: 0;
+    font-size: 50px;
+    font-style: italic;
+    text-shadow: rgb(209, 205, 205) 3px 2px;
+}
+
 body {
+    background-color:rgb(160, 156, 156);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,12 +23,23 @@ body {
    border: 1px solid black;
    width: 800px;
    height: 800px;
+   background-color: white;
+}
+
+#main {
+    display: flex;
+}
+
+.grid-size {
+    font-weight: bold;
+    font-size: 40px;
+    text-shadow: rgb(209, 205, 205) 3px 2px;
+
 }
 
 
 
 .cell {
-    /* border: 1px black solid; */
     height: 50px;
     width: 50px;
 }
@@ -29,6 +48,6 @@ body {
     display: flex;
 }
 
-/* .cell:hover {
-    background-color: black;
-} */
+button {
+    font-size: 20px;
+}
